@@ -14,6 +14,7 @@ button.addEventListener(`click`, function () {
     for (let i = 1; i <= 100; i++) {
         // creo nel dom un div con classe cell
         const cellElement = document.createElement(`div`);
+        // al div appena creato aggiungo classe .cell
         cellElement.className = `cell`;
         // nell elemento cell metto i che sarebbero i numeri crescenti
         cellElement.innerHTML = i;
@@ -36,6 +37,38 @@ button.addEventListener(`click`, function () {
 
 
 
+// BONUS, indici non ordinati ma disordinati univoci da 1 a 100
+const cellValues = getRandomNumbersArray;
+
+
+// creo funzione per avere numeri in ordine casuale
+function getRandomNumbersArray() {
+    const array = [];
+
+    for (let i = 1; i <= 100; i++) {
+        array.push(i);
+    }
+
+    console.log(array);
+
+    array.sort(function () {
+        const random = Math.round(Math.random());
+        return random === 1 ? 1 : -1;
+    })
+
+    console.log(array);
+
+    return array;
+}
+
+
+
 function isNumberEven(number) {
     return number % 2 == 0;
 }
+
+
+
+
+
+
